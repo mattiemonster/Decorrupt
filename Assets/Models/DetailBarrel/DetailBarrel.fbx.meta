@@ -3,7 +3,17 @@ guid: 836001a3d8073af4fa12c66f36d893cc
 ModelImporter:
   serializedVersion: 20100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseWood
+    second: {fileID: 2100000, guid: 9ab79c61837b5c949a226967351b9a90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalRing
+    second: {fileID: 2100000, guid: d76c0b8e904e68e4bb5e17732bbedf44, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -84,7 +94,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.003
+    globalScale: 0.3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
