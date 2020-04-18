@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityTemplateProjects
 {
@@ -70,10 +71,17 @@ namespace UnityTemplateProjects
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
         public bool invertY = false;
 
+        [Header("UI References")]
+        [Tooltip("Whether or not to show a crosshair when the camera is being controlled.")]
+        public bool enableCrosshair = true;
+        [Tooltip("Image to show when the camera is being controlled.")]
+        public GameObject crosshairImage;
+
         void OnEnable()
         {
             m_TargetCameraState.SetFromTransform(transform);
             m_InterpolatingCameraState.SetFromTransform(transform);
+            if (enableCrosshair) crosshairImage.SetActive(false);
         }
 
         Vector3 GetInputTranslationDirection()
@@ -111,23 +119,25 @@ namespace UnityTemplateProjects
             // Exit Sample  
             if (Input.GetKey(KeyCode.Escape))
             {
-                Application.Quit();
+                // Application.Quit();
 				#if UNITY_EDITOR
 				UnityEditor.EditorApplication.isPlaying = false; 
 				#endif
             }
 
-            // Hide and lock cursor when right mouse button pressed
+            // Hide and lock cursor when right mouse button pressed, show crosshair
             if (Input.GetMouseButtonDown(1))
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                if (enableCrosshair) crosshairImage.SetActive(true);
             }
 
-            // Unlock and show cursor when right mouse button released
+            // Unlock and show cursor when right mouse button released, hide crosshair
             if (Input.GetMouseButtonUp(1))
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                if (enableCrosshair) crosshairImage.SetActive(false);
             }
 
             // Rotation
