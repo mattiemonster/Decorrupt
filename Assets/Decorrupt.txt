@@ -1,0 +1,13 @@
+Decorrupt
+Dungeon crawler
+Decorrupter coming to decorrupt world
+Randomly generated? But level based, has an ending. Newgame+ of course
+Every time a room is completed, it's lighting changes to show it is no longer corrupt
+	Possibly lerped based on enemy count
+Health bar is corrupted when hurt
+Puzzle elements?
+	Solve puzzle to stop spawns in a room?
+Weapon progression and upgrading
+Corruption can spread? Have to stop it spreading? Time limit to clear whole area before having to do previous rooms again?
+	Different gamemode?
+Menu buttons are corrupted when not hovered but decorrupt when hovered.
