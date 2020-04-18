@@ -71,6 +71,9 @@ namespace UnityTemplateProjects
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
         public bool invertY = false;
 
+        [Tooltip("Speed factor to multiply by when holding left shift.")]
+        public float sprintSpeed = 10f;
+
         [Header("UI References")]
         [Tooltip("Whether or not to show a crosshair when the camera is being controlled.")]
         public bool enableCrosshair = true;
@@ -157,7 +160,7 @@ namespace UnityTemplateProjects
             // Speed up movement when shift key held
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                translation *= 10.0f;
+                translation *= sprintSpeed;
             }
             
             // Modify movement by a boost factor (defined in Inspector and modified in play mode through the mouse scroll wheel)
